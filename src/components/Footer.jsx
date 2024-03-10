@@ -79,6 +79,7 @@ function Footer() {
           <p className="text-lg  font-bold">650 - 450 - 8315</p>
         </div>
       </div>
+      <div>Powered by Cenify IT</div>
     </div>
   );
 }

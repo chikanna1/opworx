@@ -21,14 +21,24 @@ import "react-toastify/dist/ReactToastify.css";
 import ContactForm from "../components/ContactForm";
 
 export default function ContactUs() {
+  const serviceId = "service_rybt4lj";
+  const templateId = "template_1w1lkn9";
+  const pubKey = "xDAr0292t5aO-aL89";
+
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
+    phoneNumber: "",
+    companyName: "",
+    titleOrPosition: "",
+    department: "",
     email: "",
     message: "",
   });
 
   const updateFormValue = (key, value) => {
+    console.log(key);
+    console.log(value);
     setFormValues({
       ...formValues,
       [key]: value,
@@ -59,6 +69,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formValues);
 
     const validForm = validateFormFields();
 
@@ -79,18 +90,17 @@ export default function ContactUs() {
       from_firstName: formValues.firstName,
       from_lastName: formValues.lastName,
       from_emailAddress: formValues.email,
+      from_phoneNumber: formValues.phoneNumber,
+      from_companyName: formValues.companyName,
+      from_titleOrPosition: formValues.titleOrPosition,
+      from_department: formValues.department,
       message: formValues.message,
     };
 
     try {
-      await emailjs.send(
-        "service_7xqtoyi",
-        "template_qwz2r1j",
-        templateParams,
-        {
-          publicKey: "pewSwHdRYpEYa2Psx",
-        }
-      );
+      await emailjs.send(serviceId, templateId, templateParams, {
+        publicKey: pubKey,
+      });
       console.log("SUCCESS!");
       alert("Your Message Was Successfully Sent");
     } catch (err) {
@@ -117,7 +127,7 @@ export default function ContactUs() {
         </p>
 
         <hr className="my-5" />
-        <div className=" w-[100%] lg:w-[60%]">
+        <div className="px-[10%] w-[100%] lg:w-[80%]">
           <ContactForm
             formValues={formValues}
             updateFormValue={updateFormValue}

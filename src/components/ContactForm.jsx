@@ -1,5 +1,6 @@
 import React from "react";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "react-phone-number-input/input";
+import "react-phone-number-input/style.css";
 
 export default function ContactForm({
   formValues,
@@ -57,6 +58,74 @@ export default function ContactForm({
             />
           </label>
         </div>
+        <div className="mb-2 px-[10px]">
+          <label>
+            <span className="text-black">
+              Phone Number <span className="text-red-500">*</span>
+            </span>
+            <PhoneInput
+              type="text"
+              name="phoneNumber"
+              className=" w-full block px-16 py-3 mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              placeholder="Enter Your Phone Number"
+              value={formValues.phoneNumber}
+              onChange={(value) => updateFormValue("phoneNumber", value)}
+              numberInputProps={{
+                className:
+                  "rounded-md ml-2 py-2 px-10 min-w-[350px] w-[100%] focus:outline-gray-600 focus:bg-white outline outline-2 outline-gray-400", // my Tailwind classes
+              }}
+            />
+          </label>
+        </div>
+
+        <div className="mb-2 px-[10px]">
+          <label>
+            <span className="text-black">
+              Company/Institution <span className="text-red-500">*</span>
+            </span>
+            <input
+              type="text"
+              name="name"
+              className=" w-full block px-16 py-3 mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              placeholder="Enter Your Company/Institution"
+              value={formValues.companyName}
+              onChange={(e) => updateFormValue("companyName", e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="mb-2 px-[10px]">
+          <label>
+            <span className="text-black">
+              Title/Position <span className="text-red-500">*</span>
+            </span>
+            <input
+              type="text"
+              name="name"
+              className=" w-full block px-16 py-3 mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              placeholder="Enter Your Title/Position"
+              value={formValues.titleOrPosition}
+              onChange={(e) =>
+                updateFormValue("titleOrPosition", e.target.value)
+              }
+            />
+          </label>
+        </div>
+        <div className="mb-2 px-[10px]">
+          <label>
+            <span className="text-black">
+              Department <span className="text-red-500">*</span>
+            </span>
+            <input
+              type="text"
+              name="name"
+              className=" w-full block px-16 py-3 mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              placeholder="Enter Your Department"
+              value={formValues.department}
+              onChange={(e) => updateFormValue("department", e.target.value)}
+            />
+          </label>
+        </div>
+
         <div className="my-3 px-[10px]">
           <label>
             <span className="text-black">
@@ -67,7 +136,7 @@ export default function ContactForm({
               type="message"
               className=" w-full block px-16 py-4 mt-2 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               lines={20}
-              rows={10}
+              rows={7}
               required
               value={formValues.message}
               onChange={(e) => updateFormValue("message", e.target.value)}

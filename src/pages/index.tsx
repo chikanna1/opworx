@@ -57,7 +57,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col lg:flex-row justify-center py-[50px] px-[15%] lg:px-[5%] mt-5 bg-slate-500 ">
-          <div className="border-b-[5px] border-b-black lg:w-[30%] lg:border-r-[5px] lg:border-r-black lg:h-[300px] h-[400px] flex flex-col justify-around px-[20px]">
+          <div className="border-b-[5px] lg:border-b-[0px] border-b-black lg:w-[30%] lg:border-r-[5px] lg:border-r-black lg:h-[300px] h-[400px] flex flex-col justify-around px-[20px]">
             <FontAwesomeIcon
               className={`text-black`}
               icon={faLightbulb}
@@ -67,7 +67,7 @@ export default function Home() {
               A technology company as much as it is a Service company
             </p>
           </div>
-          <div className="border-b-[5px] border-b-black lg:w-[30%] lg:border-r-[5px] lg:border-r-black h-[400px] lg:h-[300px] flex flex-col justify-around px-[20px]">
+          <div className="border-b-[5px] border-b-black lg:border-b-[0px] lg:w-[30%] lg:border-r-[5px] lg:border-r-black h-[400px] lg:h-[300px] flex flex-col justify-around px-[20px]">
             <FontAwesomeIcon
               className={`text-black`}
               icon={faBarChart}
