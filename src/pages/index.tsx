@@ -1,118 +1,115 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+import showcaseImage from "../assets/Opworx.2.png";
+
+import {} from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb, faBarChart } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import iconbadge from "../../public/assets/images/icon-image.jpeg";
+import minoritybadge from "../../public/assets/images/minorityownedbusiness.png";
+import laboratorybadge from "../../public/assets/images/laboratory-org.png";
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div>
+      <Header />
+      <div>
+        {/* Showcase */}
+        <div className="w-[100vw] h-[110vh] bg-[url('/assets/images/background-opworx.jpg')] bg-[position:50%_40%] bg-no-repeat">
+          <div className="w-full h-full backdrop-brightness-50">
+            <div className="flex flex-col items-center h-[100%] justify-center lg:justify-start">
+              <h1 className="text-[100px] md:text-[200px] lg:text-[300px] text-white brightness-[60%] mt-[-30%] lg:mt-[-50px]">
+                Opworx
+              </h1>
+              <div className="text-white text-center">
+                <p className="capitalize text-[30px]">
+                  Freelance operations management
+                </p>
+                <p className="capitalize text-[25px]">Services & Consulting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-[35px] capitalize mt-[20px] mb-[30px]">
+            Who We Are
+          </p>
+
+          <div className="px-[5%]">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={showcaseImage}
+              alt="Opworx"
+              className="w-[500px] h-[300px] lg:w-[600px] lg:h-[400px]"
+              width={400}
+              height={300}
             />
-          </a>
+          </div>
+
+          <p className="lg:w-[50%] my-[30px] text-[22px] text-center px-[5%] ">
+            We are a service oriented company that harnesses the power of
+            technology and data analytics to ensure operational efficiency for
+            our clients in different industries.
+          </p>
+        </div>
+        <div className="flex flex-col lg:flex-row justify-center py-[50px] px-[15%] lg:px-[5%] mt-5 bg-slate-500 ">
+          <div className="border-b-[5px] border-b-black lg:w-[30%] lg:border-r-[5px] lg:border-r-black lg:h-[300px] h-[400px] flex flex-col justify-around px-[20px]">
+            <FontAwesomeIcon
+              className={`text-black`}
+              icon={faLightbulb}
+              size="4x"
+            />
+            <p className="capitalize text-center font-semibold text-[18px]">
+              A technology company as much as it is a Service company
+            </p>
+          </div>
+          <div className="border-b-[5px] border-b-black lg:w-[30%] lg:border-r-[5px] lg:border-r-black h-[400px] lg:h-[300px] flex flex-col justify-around px-[20px]">
+            <FontAwesomeIcon
+              className={`text-black`}
+              icon={faBarChart}
+              size="4x"
+            />
+            <p className="capitalize text-center font-semibold text-[18px]">
+              Maximizing the benefits of technology and harnessing insights
+              through data analytics.{" "}
+            </p>
+          </div>
+          <div className="lg:w-[30%]  flex flex-col justify-around h-[400px] lg:h-[300px] px-[20px]">
+            <FontAwesomeIcon
+              className={`text-black`}
+              icon={faLightbulb}
+              size="4x"
+            />
+            <p className="capitalize text-center font-semibold text-[18px]">
+              Consulting/Management Across a broad range of industries{" "}
+            </p>
+          </div>
+        </div>
+
+        {/* Badges */}
+        <div className="flex flex-col  lg:flex-row justify-between px-[20%] bg-blue-gray-300 lg:mt-[75px] items-center">
+          <Image
+            className="my-[40px]  w-[300px] h-[200px]"
+            src={iconbadge}
+            alt="Badge"
+          />
+          <Image
+            className="my-[40px] w-[300px] h-[200px]"
+            src={minoritybadge}
+            alt="Badge"
+          />
+          <Image
+            className="my-[40px] w-[250px] h-[225px]"
+            src={laboratorybadge}
+            alt="Badge"
+          />
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Footer />
+    </div>
   );
 }
